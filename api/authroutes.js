@@ -150,4 +150,9 @@ router.delete('/deletefavorite/:movieId', authMiddleware, async (req, res) => {
   }
 });
 
+router.get('/', (req, res) => {
+  const jsonData = { message: 'Bem-vindo à minha API!' };
+  res.json(jsonData);
+});
+
 module.exports = router;
