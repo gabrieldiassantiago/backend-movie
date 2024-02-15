@@ -3,8 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const config = require('./config/config');
-const authRoutes = require('./routes/authroutes');
+const config = require('../config/config');
+const authRoutes = require('./authroutes');
 const cors = require('cors')
 
 dotenv.config();
