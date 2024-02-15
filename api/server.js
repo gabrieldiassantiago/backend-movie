@@ -11,14 +11,15 @@ dotenv.config();
 
 const app = express();
 const PORT = 3001;
-
+app.use(cors({
+  origin: 'https://movie.gabrieldiassantiago.com'
+}));
 mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Conectado ao MongoDB'))
   .catch((err) => console.error('Erro ao conectar ao MongoDB:', err));
 
   app.use(bodyParser.json());
 
-  app.use(cors());
 
 
 app.use('/api/', authRoutes);
